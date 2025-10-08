@@ -1,8 +1,8 @@
 import {Input, Stack} from '@vygruppen/spor-react'
-import {useForm} from 'react-hook-form'
+import {Controller, useForm} from 'react-hook-form'
 
 export default function Component() {
-  const {register} = useForm({
+  const {register, control} = useForm({
     mode: 'onSubmit',
     values: {
       test: 1000,
@@ -11,8 +11,8 @@ export default function Component() {
 
   return (
     <Stack gap={2} maxW={'400px'}>
-      <Input {...register('test')} label={'Test'} />
-      <Input {...register('test')} label={'Test'} />
+      <Input {...register('test')} label={'Uncontrolled'} />
+      <Controller name={'test'} control={control} render={({field}) => <Input {...field} label={'Controlled'} />} />
     </Stack>
   )
 }
