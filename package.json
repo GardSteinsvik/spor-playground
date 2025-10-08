@@ -1,0 +1,38 @@
+{
+  "name": "spor-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
+    "lint": "biome check",
+    "lint:fix": "biome check --write --unsafe",
+    "upgrade": "npx npm-check-updates -u --reject react --reject @types/react --reject react-dom --reject @types/react-dom && npm i --force && npm i"
+  },
+  "dependencies": {
+    "@react-router/fs-routes": "7.9.3",
+    "@react-router/node": "7.9.3",
+    "@react-router/serve": "7.9.3",
+    "@vygruppen/spor-react": "12.14.2",
+    "isbot": "5.1.31",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router": "7.9.3",
+    "react-hook-form": "7.64.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "@react-router/dev": "7.9.3",
+    "@types/node": "24",
+    "@types/react": "18.3.25",
+    "@types/react-dom": "18.3.7",
+    "typescript": "5.9.3",
+    "vite": "7.1.9",
+    "vite-tsconfig-paths": "5.1.4"
+  },
+  "trustedDependencies": [
+    "@vygruppen/spor-react"
+  ]
+}
